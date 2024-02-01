@@ -1,16 +1,76 @@
-$font-regular: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
-$font-demi: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
-$font-bold: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+@use './partials/colors';
+@use './partials/typefaces';
+@use './partials/weights';
 
-// primary colors
-$bandSite-Black: #323232;
-$silver: #AFAFAF;
-$white: #FFFFFF;
-// secondary colors
-$bandsite-darkblack: #000000;
-$mercury: #E1E1E1;
-$alabaster: #FAFAFA;
+body{
+    margin: 0;
+}
 
-$regular-weight: 400;
-$demi-weight: 600;
-$bold-weight: 700;
+nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: colors.$bandsite-black;
+
+    @media (max-width:767px){
+        .nav__a{
+            font-family: 'regular';
+            font-size: 14px;
+            color: colors.$white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            width: 50%;
+            box-sizing:border-box;
+
+            &--active{
+                border-bottom: 2px solid colors.$white;
+                font-family: 'demi';
+            }
+        }
+
+        .logo{
+            font-size: 24px;
+            width:100%;
+        }
+    }  
+
+}
+
+.hero-img{
+    object-fit:cover;
+    height: 15rem;
+    min-width: 15rem;
+    width: 100%;
+    object-position: center center;
+    position: absolute;
+    z-index: -1;
+}
+.hero{
+    height: 15rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 16px;
+    background-color: rgb(colors.$bandsite-black,0.5);
+
+    h2{
+        color: colors.$white;
+        font-family: 'demi';
+    }
+}
+
+main{
+
+}
+
+.gallery{
+
+}
+
+footer{
+
+}
