@@ -80,10 +80,6 @@ main {
     padding: 0 16px;
   }
 }
-main h2 {
-  padding-top: 24px;
-  padding-bottom: 16px;
-}
 main img {
   width: 100%;
 }
@@ -96,8 +92,64 @@ main p {
   font-family: "regular";
   font-size: 13px;
   padding-bottom: 16px 0;
+  line-height: 18px;
 }
 main .main__quote {
   font-family: "demi";
   line-height: 22px;
+}
+
+.gallery {
+  background-color: #eeeeee;
+  font-family: "demi";
+  color: #323232;
+}
+@media (max-width: 767px) {
+  .gallery {
+    padding: 0 16px;
+  }
+}
+.gallery h2 {
+  padding-top: 24px;
+}
+.gallery img {
+  width: 100%;
+  padding-bottom: 16px;
+}
+.gallery__img-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+footer {
+  font-family: "regular";
+  color: #FFFFFF;
+  background-color: #323232;
+}
+@media (max-width: 767px) {
+  footer {
+    padding: 0 16px;
+  }
+}
+footer h2 {
+  margin-top: 0;
+  padding-top: 24px;
+}
+footer img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-right: 16px;
+  padding-bottom: 10px;
+}
+footer p {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+footer .footer__bold-text {
+  font-family: "demi";
+}
+footer .footer__copyright {
+  font-size: 12px;
 }/*# sourceMappingURL=bio.css.map */
