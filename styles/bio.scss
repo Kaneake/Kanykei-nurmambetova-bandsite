@@ -1,6 +1,5 @@
 @use './partials/colors';
 @use './partials/typefaces';
-@use './partials/weights';
 
 body{
     margin: 0;
@@ -60,14 +59,49 @@ nav{
     h2{
         color: colors.$white;
         font-family: 'demi';
+        padding-top: 24px;
+        padding-bottom: 16px;
     }
 }
 
 main{
+    @media (max-width: 767px){
+        padding: 0 16px;
+    }
+
+    font-family: 'demi';
+    color: colors.$bandsite-black;
+
+    h2{
+        padding-top: 24px;
+        padding-bottom: 16px;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    h3{
+        font-family: 'regular';
+        font-size: 14px;
+        color: colors.$bandsite-darkblack;
+    }
+
+    p{
+        font-family: 'regular';
+        font-size: 13px;
+        padding-bottom: 16px 0;
+    }
+
+    .main__quote{
+        font-family: 'demi';
+        line-height: 22px;
+    }
 
 }
 
 .gallery{
+    
 
 }
 

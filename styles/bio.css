@@ -67,4 +67,37 @@ nav {
 .hero h2 {
   color: #FFFFFF;
   font-family: "demi";
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+main {
+  font-family: "demi";
+  color: #323232;
+}
+@media (max-width: 767px) {
+  main {
+    padding: 0 16px;
+  }
+}
+main h2 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+main img {
+  width: 100%;
+}
+main h3 {
+  font-family: "regular";
+  font-size: 14px;
+  color: #000000;
+}
+main p {
+  font-family: "regular";
+  font-size: 13px;
+  padding-bottom: 16px 0;
+}
+main .main__quote {
+  font-family: "demi";
+  line-height: 22px;
 }/*# sourceMappingURL=bio.css.map */
