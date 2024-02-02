@@ -172,6 +172,7 @@ main .main__quote {
   main .main__quote {
     padding: 0 48px;
     box-sizing: border-box;
+    font-size: 16px;
   }
 }
 
