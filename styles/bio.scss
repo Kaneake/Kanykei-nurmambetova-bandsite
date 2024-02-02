@@ -1,42 +1,57 @@
-@use './partials/colors';
-@use './partials/typefaces';
+@use './partials/_variables.scss' as *;
+@use './partials/_mixins.scss' as *;
 
 body{
     margin: 0;
 }
 
 nav{
+    background-color: $bandsite-black;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    background-color: colors.$bandsite-black;
+     
+    @include tablet {
+        justify-content: flex-start;
+    }
 
-    @media (max-width:320px){
-        .nav__a{
-            font-family: 'regular';
-            font-size: 14px;
-            color: colors.$white;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            width: 50%;
-            box-sizing:border-box;
+    .nav__a {
+        font-family: 'regular';
+        font-size: 14px;
+        color: $white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing:border-box;
+        padding: 0.5rem 1rem;
+        width: 50vw;
 
-            &--active{
-                border-bottom: 2px solid colors.$white;
-                font-family: 'demi';
-            }
+        @include tablet {
+            padding: 1rem 2rem;
+            width: 10rem;
         }
 
-        .logo{
-            font-size: 24px;
-            width:100%;
+        &--active{
+            width: 6rem;
+            border-bottom: 2px solid $white;
+            font-family: 'demi';
         }
-    }  
+    }
 
+    .nav__logo{
+        font-size: 24px;
+        padding: 1rem 6rem;
+        width: 100vw;
+        max-width: 120px;
+        max-width: 20px;
+
+        @include tablet {
+            width: 10rem;
+        }
+    }
+
+    
 }
 
 .hero-img{
@@ -47,93 +62,159 @@ nav{
     position: absolute;
     z-index: -1;
 }
+
 .hero{
     height: 60vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 0 16px;
-    background-color: rgb(colors.$bandsite-black,0.5);
+    background-color: rgb($bandsite-black,0.5);
+
+    @include tablet {
+        padding: 0 36px;
+    }
 
     h2{
-        color: colors.$white;
+        color: $white;
         font-family: 'demi';
         padding-top: 24px;
         padding-bottom: 16px;
+        font-size: 6vw;
+
+        @include tablet{
+            font-size: 7vw;
+            padding-top: 48px;
+            padding-bottom: 36px;
+        }
     }
 }
 
 main{
-    @media (max-width: 320px){
-        padding: 0 16px;
+    padding: 0 16px;
+    font-family: 'demi';
+    color: $bandsite-black;
+
+    @include tablet {
+        padding: 0 36px;
     }
 
-    font-family: 'demi';
-    color: colors.$bandsite-black;
+    h2{
+        font-size: 5vw;
+    }
 
     img{
         width: 100%;
         height: 50vw;
+        box-sizing: border-box;
+
+        @include tablet {
+            padding: 0 48px;
+        }
     }
 
     h3{
         font-family: 'regular';
         font-size: 14px;
-        color: colors.$bandsite-darkblack;
+        color: $bandsite-darkblack;
+
+        @include tablet {
+            padding: 0 48px;
+            padding-top: 36px;
+            font-family: 'demi';
+            font-size: 24px;
+        }
     }
 
-    p{
+    .main__bio{
         font-family: 'regular';
         font-size: 13px;
-        padding-bottom: 16px 0;
+        padding-bottom: 16px;
         line-height: 18px;
+
+        @include tablet {
+            width: 48%;
+            box-sizing: border-box;
+        }
+    }
+
+    .main__bio-part-one{
+        margin-right: 24px;
+    }
+
+    .main__bio-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @include tablet {
+            padding: 0 48px;
+        }
     }
 
     .main__quote{
+        font-size: 13px;
+        padding-bottom: 16px;
+        line-height: 18px;
         font-family: 'demi';
         line-height: 22px;
+
+        @include tablet {
+            padding: 0 48px;
+            box-sizing: border-box;
+        }
     }
 
 }
 
 .gallery{
-    @media (max-width: 320px){
-        padding: 0 16px;
-    }
-
-    background-color: lighten(colors.$mercury,5%);
+    padding: 0 16px;
+    background-color: lighten($mercury,5%);
     font-family: 'demi';
-    color: colors.$bandsite-black;
+    color: $bandsite-black;
+
+    @include tablet {
+        padding: 0 36px;
+    }
 
     h2{
         padding-top: 24px;
+        font-size: 5vw;
     }
 
     img{
         width: 100%;
         padding-bottom:16px;
+
+        @include tablet {
+            width: 27vw;
+            padding-right: 24px;
+            padding-bottom: 24px;
+        }
     }
 
     &__img-container{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
     }
 }
 
 footer{
-    @media (max-width: 320px){
-        padding: 0 16px;
-    }
-
+    padding: 0 16px;
     font-family: 'regular';
-    color: colors.$white;
-    background-color: colors.$bandsite-black;
+    color: $white;
+    background-color: $bandsite-black;
+
+    @include tablet {
+        padding: 0 36px;
+    }
 
     h2{
         margin-top:0;
         padding-top: 24px;
+        font-size: 5vw;
     }
 
     img{
@@ -141,6 +222,14 @@ footer{
         height:1.5rem;
         padding-right: 16px;
         padding-bottom: 10px;
+    }
+
+    .footer__svg-container{
+        @include tablet {
+            position: relative;
+            bottom: 9vh;
+            left: 35vw;
+        }
     }
 
     p{
@@ -154,19 +243,26 @@ footer{
 
     .footer__copyright{
         font-size: 12px;
+        padding-bottom: 24px;
+    }
+
+    .footer__logo{
+        font-size: 4vw;
+        position: relative;
+        left: 70vw;
+        bottom: 42.5vh;
+    }
+
+    .footer__info-container{
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }
 
-@media (max-width: 320px){
-    h2{
-        font-size: 6vw;
-    }
-}
 
-@media (max-width: 1920px){
-    h2{
-        font-size: 6vw;
-    }
-}
 
 

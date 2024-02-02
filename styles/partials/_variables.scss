@@ -1,3 +1,18 @@
+// primary colors
+$bandsite-black: #323232;
+$silver: #AFAFAF;
+$white: #FFFFFF;
+
+// secondary colors
+$bandsite-darkblack: #000000;
+$mercury: #E1E1E1;
+$alabaster: #FAFAFA;
+
+//responsive design breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+//typefaces
 @font-face {
     font-family: 'regular';
     src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) 
