@@ -172,6 +172,7 @@ main .main__quote {
   main .main__quote {
     padding: 0 48px;
     box-sizing: border-box;
+    font-size: 16px;
   }
 }
 
@@ -250,9 +251,13 @@ footer .footer__copyright {
 }
 footer .footer__logo {
   font-size: 4vw;
-  position: relative;
-  left: 70vw;
-  bottom: 42.5vh;
+}
+@media screen and (min-width: 768px) {
+  footer .footer__logo {
+    position: relative;
+    left: 70vw;
+    bottom: 42.5vh;
+  }
 }
 @media screen and (min-width: 768px) {
   footer .footer__info-container {
