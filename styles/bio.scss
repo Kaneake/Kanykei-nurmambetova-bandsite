@@ -248,9 +248,11 @@ footer{
 
     .footer__logo{
         font-size: 4vw;
-        position: relative;
-        left: 70vw;
-        bottom: 42.5vh;
+        @include tablet {
+            position: relative;
+            left: 70vw;
+            bottom: 42.5vh;
+        }
     }
 
     .footer__info-container{
