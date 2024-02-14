@@ -1,17 +1,21 @@
 @font-face {
-  font-family: "regular";
+  font-family: "avenir-regular";
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
-  font-family: "demi";
+  font-family: "avenir-demi";
   src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
 }
 @font-face {
-  font-family: "bold";
+  font-family: "avenir-bold";
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
 }
 body {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 nav {
@@ -19,14 +23,16 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-top: 1%;
 }
 @media screen and (min-width: 768px) {
   nav {
     justify-content: flex-start;
+    padding-top: 0%;
   }
 }
 nav .nav__a {
-  font-family: "regular";
+  font-family: "avenir-regular";
   font-size: 14px;
   color: #FFFFFF;
   display: flex;
@@ -39,25 +45,40 @@ nav .nav__a {
 }
 @media screen and (min-width: 768px) {
   nav .nav__a {
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     width: 10rem;
   }
 }
 nav .nav__a--active {
-  width: 6rem;
   border-bottom: 2px solid #FFFFFF;
-  font-family: "demi";
+  font-family: "avenir-demi";
+}
+@media screen and (min-width: 768px) {
+  nav .nav__a--active {
+    width: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  nav .nav__a--active {
+    width: 5rem;
+  }
 }
 nav .nav__logo {
   font-size: 24px;
   padding: 1rem 6rem;
   width: 100vw;
-  max-width: 120px;
-  max-width: 20px;
+  max-height: 20px;
+  align-self: center;
 }
 @media screen and (min-width: 768px) {
   nav .nav__logo {
-    width: 10rem;
+    max-width: 120px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  nav .nav__logo {
+    margin-left: 2.5em;
+    padding: 2.5rem 6rem;
   }
 }
 
@@ -65,6 +86,7 @@ nav .nav__logo {
   -o-object-fit: cover;
      object-fit: cover;
   height: 60vw;
+  max-height: 650px;
   width: 100%;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
@@ -74,6 +96,7 @@ nav .nav__logo {
 
 .hero {
   height: 60vw;
+  max-height: 650px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -85,12 +108,17 @@ nav .nav__logo {
     padding: 0 36px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero {
+    padding: 0 105px;
+  }
+}
 .hero h2 {
   color: #FFFFFF;
-  font-family: "demi";
+  font-family: "avenir-demi";
   padding-top: 24px;
   padding-bottom: 16px;
-  font-size: 6vw;
+  font-size: 6.5vw;
 }
 @media screen and (min-width: 768px) {
   .hero h2 {
@@ -99,10 +127,15 @@ nav .nav__logo {
     padding-bottom: 36px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero h2 {
+    font-size: 5vw;
+  }
+}
 
 main {
   padding: 0 16px;
-  font-family: "demi";
+  font-family: "avenir-demi";
   color: #323232;
 }
 @media screen and (min-width: 768px) {
@@ -110,8 +143,23 @@ main {
     padding: 0 36px;
   }
 }
+@media screen and (min-width: 1280px) {
+  main {
+    padding: 0 105px;
+  }
+}
 main h2 {
-  font-size: 5vw;
+  font-size: 6.5vw;
+}
+@media screen and (min-width: 768px) {
+  main h2 {
+    font-size: 4.5vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  main h2 {
+    font-size: 3.5vw;
+  }
 }
 main img {
   width: 100%;
@@ -121,10 +169,17 @@ main img {
 @media screen and (min-width: 768px) {
   main img {
     padding: 0 48px;
+    height: 40vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main img {
+    padding: 0 105px;
+    height: 37vw;
   }
 }
 main h3 {
-  font-family: "regular";
+  font-family: "avenir-regular";
   font-size: 14px;
   color: #000000;
 }
@@ -132,12 +187,18 @@ main h3 {
   main h3 {
     padding: 0 48px;
     padding-top: 36px;
-    font-family: "demi";
+    font-family: "avenir-demi";
     font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main h3 {
+    padding: 30px 0 5px 105px;
   }
 }
 main .main__bio {
-  font-family: "regular";
+  font-family: "avenir-regular";
   font-size: 13px;
   padding-bottom: 16px;
   line-height: 18px;
@@ -146,10 +207,27 @@ main .main__bio {
   main .main__bio {
     width: 48%;
     box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
-main .main__bio-part-one {
-  margin-right: 24px;
+@media screen and (min-width: 1280px) {
+  main .main__bio {
+    width: 48%;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .main__bio-part-one {
+    margin-right: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .main__bio-part-one {
+    margin-right: 24px;
+  }
 }
 main .main__bio-container {
   display: flex;
@@ -161,25 +239,56 @@ main .main__bio-container {
     padding: 0 48px;
   }
 }
+@media screen and (min-width: 1280px) {
+  main .main__bio-container {
+    padding: 0 105px;
+  }
+}
 main .main__quote {
   font-size: 13px;
-  padding-bottom: 16px;
-  line-height: 18px;
-  font-family: "demi";
+  font-family: "avenir-demi";
   line-height: 22px;
 }
 @media screen and (min-width: 768px) {
   main .main__quote {
     padding: 0 48px;
     box-sizing: border-box;
+    font-size: 23px;
+    line-height: 30px;
+    font-family: "avenir-demi";
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .main__quote {
+    padding: 0 105px;
+    max-width: 70vw;
+  }
+}
+main .main__quote-author {
+  font-size: 13px;
+  font-family: "avenir-demi";
+  padding-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  main .main__quote-author {
+    padding: 0 48px;
+    box-sizing: border-box;
     font-size: 16px;
+    font-family: "avenir-demi";
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .main__quote-author {
+    padding: 0 105px;
   }
 }
 
 .gallery {
   padding: 0 16px;
   background-color: #eeeeee;
-  font-family: "demi";
+  font-family: "avenir-demi";
   color: #323232;
 }
 @media screen and (min-width: 768px) {
@@ -189,7 +298,20 @@ main .main__quote {
 }
 .gallery h2 {
   padding-top: 24px;
-  font-size: 5vw;
+  font-size: 6.5vw;
+}
+@media screen and (min-width: 768px) {
+  .gallery h2 {
+    font-size: 4.5vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery h2 {
+    padding-top: 40px;
+    padding-left: 105px;
+    font-size: 3.5vw;
+    margin-top: 0;
+  }
 }
 .gallery img {
   width: 100%;
@@ -211,7 +333,7 @@ main .main__quote {
 
 footer {
   padding: 0 16px;
-  font-family: "regular";
+  font-family: "avenir-regular";
   color: #FFFFFF;
   background-color: #323232;
 }
@@ -220,22 +342,45 @@ footer {
     padding: 0 36px;
   }
 }
+@media screen and (min-width: 1280px) {
+  footer {
+    padding: 0 105px 5px 105px;
+  }
+}
+footer .footer__top-align {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  footer .footer__top-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
 footer h2 {
   margin-top: 0;
+  margin-bottom: 1rem;
   padding-top: 24px;
-  font-size: 5vw;
+  padding-right: 24px;
+  font-size: 2rem;
 }
 footer img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   padding-right: 16px;
   padding-bottom: 10px;
 }
 @media screen and (min-width: 768px) {
+  footer img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
   footer .footer__svg-container {
-    position: relative;
-    bottom: 9vh;
-    left: 35vw;
+    padding-top: 2rem;
   }
 }
 footer p {
@@ -243,27 +388,62 @@ footer p {
   padding-bottom: 10px;
 }
 footer .footer__bold-text {
-  font-family: "demi";
+  font-family: "avenir-demi";
 }
 footer .footer__copyright {
   font-size: 12px;
   padding-bottom: 24px;
 }
 footer .footer__logo {
-  font-size: 4vw;
+  font-size: 1.7rem;
+  font-weight: 200;
+  color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
   footer .footer__logo {
-    position: relative;
-    left: 70vw;
-    bottom: 42.5vh;
+    visibility: hidden;
+    height: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer .footer__logo {
+    height: 0;
+    visibility: hidden;
+  }
+}
+footer .footer__second-logo {
+  font-size: 2rem;
+  font-weight: 200;
+  color: #FFFFFF;
+  visibility: hidden;
+  width: 0;
+}
+@media screen and (min-width: 768px) {
+  footer .footer__second-logo {
+    visibility: visible;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer .footer__second-logo {
+    visibility: visible;
   }
 }
 @media screen and (min-width: 768px) {
   footer .footer__info-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 0.5rem;
+  }
+}
+footer .footer__info-container div {
+  padding-right: 6em;
+}
+@media screen and (min-width: 768px) {
+  footer .footer__info-container div {
+    padding-right: 5vw;
   }
 }/*# sourceMappingURL=bio.css.map */
