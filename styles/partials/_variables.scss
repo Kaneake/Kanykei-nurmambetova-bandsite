@@ -11,19 +11,3 @@ $alabaster: #FAFAFA;
 //responsive design breakpoints
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
-
-//typefaces
-@font-face {
-    font-family: 'regular';
-    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) 
-}
-
-@font-face {
-    font-family: 'demi';
-    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
-}
-
-@font-face {
-    font-family: 'bold';
-    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
-}

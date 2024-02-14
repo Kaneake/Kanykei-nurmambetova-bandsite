@@ -1,8 +1,13 @@
 @use './partials/_variables.scss' as *;
+@use './partials/fonts' as *;
 @use './partials/_mixins.scss' as *;
 
 body{
     margin: 0;
+}
+
+a{
+    text-decoration: none;
 }
 
 nav{
@@ -10,13 +15,15 @@ nav{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-top: 1%;
      
     @include tablet {
         justify-content: flex-start;
+        padding-top: 0%;
     }
 
     .nav__a {
-        font-family: 'regular';
+        font-family: 'avenir-regular';
         font-size: 14px;
         color: $white;
         display: flex;
@@ -28,14 +35,21 @@ nav{
         width: 50vw;
 
         @include tablet {
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             width: 10rem;
         }
 
         &--active{
-            width: 6rem;
             border-bottom: 2px solid $white;
-            font-family: 'demi';
+            font-family: 'avenir-demi';
+
+            @include tablet {
+                width: 5rem;
+            }
+
+            @include desktop {
+                width: 5rem;
+            }
         }
     }
 
@@ -43,11 +57,16 @@ nav{
         font-size: 24px;
         padding: 1rem 6rem;
         width: 100vw;
-        max-width: 120px;
-        max-width: 20px;
+        max-height: 20px;
+        align-self: center;
 
         @include tablet {
-            width: 10rem;
+            max-width: 120px;
+        }
+
+        @include desktop{
+            margin-left: 2.5em;
+            padding: 2.5rem 6rem;
         }
     }
 
@@ -57,6 +76,7 @@ nav{
 .hero-img{
     object-fit:cover;
     height: 60vw;
+    max-height: 650px;
     width: 100%;
     object-position: 50% 50%;
     position: absolute;
@@ -65,6 +85,7 @@ nav{
 
 .hero{
     height: 60vw;
+    max-height: 650px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -75,32 +96,51 @@ nav{
         padding: 0 36px;
     }
 
+    @include desktop{
+        padding: 0 105px;
+    }
+
     h2{
         color: $white;
-        font-family: 'demi';
+        font-family: 'avenir-demi';
         padding-top: 24px;
         padding-bottom: 16px;
-        font-size: 6vw;
+        font-size: 6.5vw;
 
         @include tablet{
             font-size: 7vw;
             padding-top: 48px;
             padding-bottom: 36px;
         }
+
+        @include desktop{
+            font-size: 5vw;
+        }
     }
 }
 
 main{
     padding: 0 16px;
-    font-family: 'demi';
+    font-family: 'avenir-demi';
     color: $bandsite-black;
 
     @include tablet {
         padding: 0 36px;
     }
 
+    @include desktop{
+        padding: 0 105px;
+    }
+
     h2{
-        font-size: 5vw;
+        font-size: 6.5vw;
+        @include tablet{
+            font-size: 4.5vw;
+        }
+
+        @include tablet{
+            font-size: 3.5vw;
+        }
     }
 
     img{
@@ -110,24 +150,35 @@ main{
 
         @include tablet {
             padding: 0 48px;
+            height: 40vw;
+        }
+
+        @include desktop {
+            padding: 0 105px;
+            height: 37vw;
         }
     }
 
     h3{
-        font-family: 'regular';
+        font-family: 'avenir-regular';
         font-size: 14px;
         color: $bandsite-darkblack;
 
         @include tablet {
             padding: 0 48px;
             padding-top: 36px;
-            font-family: 'demi';
+            font-family: 'avenir-demi';
             font-size: 24px;
+            margin-bottom: 0.5rem;
+        }
+
+        @include desktop {
+            padding: 30px 0 5px 105px;
         }
     }
 
     .main__bio{
-        font-family: 'regular';
+        font-family: 'avenir-regular';
         font-size: 13px;
         padding-bottom: 16px;
         line-height: 18px;
@@ -135,11 +186,25 @@ main{
         @include tablet {
             width: 48%;
             box-sizing: border-box;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @include desktop {
+            width: 48%;
+            box-sizing: border-box;
+            font-size: 14px;
+            line-height: 22px;
         }
     }
 
     .main__bio-part-one{
-        margin-right: 24px;
+        @include tablet{
+            margin-right: 24px;
+        }
+        @include desktop{
+            margin-right: 24px;
+        }
+        
     }
 
     .main__bio-container{
@@ -150,19 +215,46 @@ main{
         @include tablet {
             padding: 0 48px;
         }
+        @include desktop {
+            padding: 0 105px;
+        }
     }
 
     .main__quote{
         font-size: 13px;
-        padding-bottom: 16px;
-        line-height: 18px;
-        font-family: 'demi';
+        font-family: 'avenir-demi';
         line-height: 22px;
 
         @include tablet {
             padding: 0 48px;
             box-sizing: border-box;
+            font-size: 23px;
+            line-height: 30px;
+            font-family: 'avenir-demi';
+            margin-bottom: 1rem;
+        }
+
+        @include desktop {
+            padding: 0 105px;
+            max-width: 70vw;
+        }
+    }
+
+    .main__quote-author{
+        font-size: 13px;
+        font-family: 'avenir-demi';
+        padding-bottom: 16px;
+
+        @include tablet {
+            padding: 0 48px;
+            box-sizing: border-box;
             font-size: 16px;
+            font-family: 'avenir-demi';
+            margin-top: 0;
+        }
+
+        @include desktop {
+            padding: 0 105px;
         }
     }
 
@@ -171,7 +263,7 @@ main{
 .gallery{
     padding: 0 16px;
     background-color: lighten($mercury,5%);
-    font-family: 'demi';
+    font-family: 'avenir-demi';
     color: $bandsite-black;
 
     @include tablet {
@@ -180,7 +272,18 @@ main{
 
     h2{
         padding-top: 24px;
-        font-size: 5vw;
+        font-size: 6.5vw;
+
+        @include tablet{
+            font-size: 4.5vw;
+        }
+
+        @include desktop{
+            padding-top: 40px;
+            padding-left: 105px;
+            font-size: 3.5vw;
+            margin-top: 0;
+        }
     }
 
     img{
@@ -202,9 +305,9 @@ main{
     }
 }
 
-footer{
+footer {
     padding: 0 16px;
-    font-family: 'regular';
+    font-family: 'avenir-regular';
     color: $white;
     background-color: $bandsite-black;
 
@@ -212,24 +315,47 @@ footer{
         padding: 0 36px;
     }
 
-    h2{
-        margin-top:0;
-        padding-top: 24px;
-        font-size: 5vw;
+    @include desktop {
+        padding: 0 105px 5px 105px;
     }
 
-    img{
-        width:1.5rem;
-        height:1.5rem;
+    .footer__top-align{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer__top-container{
+        @include tablet{
+            display: flex;
+            justify-content:flex-start;
+            align-items: center;
+        }   
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        padding-top: 24px;
+        padding-right: 24px;
+        font-size: 2rem;
+    }
+
+    img {
+        width:2rem;
+        height:2rem;
         padding-right: 16px;
         padding-bottom: 10px;
+
+        @include tablet{
+            width:1.5rem;
+            height:1.5rem;
+        }
     }
 
     .footer__svg-container{
         @include tablet {
-            position: relative;
-            bottom: 9vh;
-            left: 35vw;
+            padding-top: 2rem;
         }
     }
 
@@ -239,7 +365,7 @@ footer{
     }
 
     .footer__bold-text{
-        font-family: 'demi';
+        font-family: 'avenir-demi';
     }
 
     .footer__copyright{
@@ -248,11 +374,34 @@ footer{
     }
 
     .footer__logo{
-        font-size: 4vw;
+        font-size: 1.7rem;
+        font-weight: 200;
+        color: $white;
+
         @include tablet {
-            position: relative;
-            left: 70vw;
-            bottom: 42.5vh;
+            visibility: hidden;
+            height: 0;
+        }
+        @include desktop {
+            height: 0;
+            visibility: hidden;
+        }
+    }
+
+    .footer__second-logo{
+        font-size: 2rem;
+        font-weight: 200;
+        color: $white;
+        visibility: hidden;
+        width: 0;
+
+        @include tablet {
+            visibility: visible;
+            width: 100%;
+            font-size: 1.5rem;
+        }
+        @include desktop {
+            visibility: visible;
         }
     }
 
@@ -260,12 +409,17 @@ footer{
         @include tablet{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            padding-top: 0.5rem;
+        }
+
+        div{
+            @include tablet{
+                padding-right: 5vw;
+            }
+            padding-right: 6em;
         }
     }
+
 }
-
-
-
-
