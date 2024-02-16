@@ -331,6 +331,110 @@ main .main__quote-author {
   justify-content: center;
 }
 
+.comments {
+  padding: 5px 16px;
+  background-color: #FFFFFF;
+  font-family: "avenir-demi";
+  color: #323232;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .comments {
+    padding: 0 36px;
+  }
+}
+.comments h2 {
+  padding: 1rem 0;
+  font-size: 6.5vw;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .comments h2 {
+    font-size: 4.5vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments h2 {
+    padding-top: 40px;
+    padding-left: 105px;
+    font-size: 3.5vw;
+  }
+}
+.comments__form-container {
+  display: flex;
+  flex-direction: row;
+}
+.comments__form-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  margin: 23px 15px 0px 5px;
+}
+@media screen and (min-width: 768px) {
+  .comments__form-icon {
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__form-icon {
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
+.comments__form-icon img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+  .comments__form-icon img {
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__form-icon img {
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
+.comments__form {
+  display: flex;
+  flex-direction: column;
+  font-family: "avenir-regular";
+}
+.comments__form ::-moz-placeholder {
+  color: #323232;
+}
+.comments__form ::placeholder {
+  color: #323232;
+}
+.comments__form label {
+  font-size: 10px;
+  font-family: "avenir-demi";
+  color: #AFAFAF;
+  padding: 5px 0;
+}
+.comments__form input {
+  font-size: 13px;
+  color: #323232;
+  padding: 10px;
+  border: 1px #AFAFAF solid;
+  border-radius: 3px;
+}
+.comments__form textarea {
+  font-size: 13px;
+  color: #323232;
+}
 footer {
   padding: 0 16px;
   font-family: "avenir-regular";

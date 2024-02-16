@@ -305,6 +305,121 @@ main{
     }
 }
 
+.comments{
+    padding: 5px 16px;
+    background-color: $white;
+    font-family: 'avenir-demi';
+    color: $bandsite-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+
+    @include tablet {
+        padding: 0 36px;
+    }
+
+    h2{
+        padding: 1rem 0;
+        font-size: 6.5vw;
+        margin: 0;
+
+        @include tablet{
+            font-size: 4.5vw;
+        }
+
+        @include desktop{
+            padding-top: 40px;
+            padding-left: 105px;
+            font-size: 3.5vw;
+        }
+    }
+
+    &__form-container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__form-icon{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: $mercury;
+        margin:  23px 15px 0px 5px;
+
+        @include tablet{
+            max-width: 48px;
+            max-height: 48px;
+        }
+
+        @include desktop{
+            max-width: 48px;
+            max-height: 48px;
+        }
+
+        img{
+            object-fit: cover;
+            object-position: 50% 50%;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+
+            @include tablet{
+                max-width: 48px;
+                max-height: 48px;
+            }
+    
+            @include desktop{
+                max-width: 48px;
+                max-height: 48px;
+            }
+        }
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        font-family: 'avenir-regular';
+
+        ::placeholder{
+            color: $bandsite-black;
+        }
+
+        label{
+            font-size: 10px;
+            font-family: 'avenir-demi';
+            color: $silver;
+            padding: 5px 0;
+        }
+
+        input{
+            font-size: 13px;
+            color: $bandsite-black;
+            padding: 10px;
+            border: 1px $silver solid;
+            border-radius: 3px;
+        }
+
+        textarea{
+            font-size: 13px;
+            color: $bandsite-black;
+        }
+
+        button{
+
+        }
+        
+
+
+    }
+
+    &__list{
+
+    }
+
+}
+
 footer {
     padding: 0 16px;
     font-family: 'avenir-regular';
